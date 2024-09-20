@@ -1,0 +1,21 @@
+html,
+body {
+ background-color: #000000;
+ color: #000000;
+ background: #000000;
+}
+h1 {
+color: #53ff;
+}
+hr {
+    height: 10px;
+    color: chartreuse;
+    background-color: purple;
+    content: "🦭";
+}
+button {
+ background-color: rgb(65, 105, 225);
+ border-radius: 10px;
+ border-color: rgb(65, 75, 255);
+ font-size: 20px;
+}
