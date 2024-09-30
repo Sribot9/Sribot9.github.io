@@ -65,8 +65,11 @@ button.addEventListener("click", function(){
   console.log(u1.classList);
 });
 u1.addEventListener("click", function(){
-  localStorage.clear();
-});
+  //localStorage.clear();
+  u1.textContent = "POOr."
+  setTimeout(() => {
+  u1.textContent = "Buy another seal";
+}, 1000);
 save.addEventListener("click", function(){
 SAVE()
 });
