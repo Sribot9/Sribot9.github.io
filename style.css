@@ -4,6 +4,22 @@
     to {
       opacity: 1;}
 }
+@keyframes redtoblue {
+  from {
+    background-color: rgb(255, 0, 0);
+    border-color: rgb(245, 0, 0);}
+  to {
+      background-color: rgb(65, 105, 225);
+    border-color: rgb(65, 75, 255);}
+}
+@keyframes bluetored {
+  from {
+    background-color: rgb(65, 105, 225);
+    border-color: rgb(65, 75, 255);}
+  to {
+    background-color: rgb(255, 0, 0);
+    border-color: rgb(245, 0, 0);}
+}
 html,
 body {
  background-color: #000000;
@@ -65,4 +81,19 @@ aside {
   left: 90%;
   bottom: 90%;
   position: fixed;
+}
+#SAVE.DELETE {
+  background-color: red;
+  animation-duration: 0.5s;
+  animation-name: bluetored;
+  border-color: rgb(245, 0, 0);
+}
+#SAVE.DELCONFIRM {
+  border-color: #000000;
+  background-color: #000000;
+  color: white;
+}
+#SAVE.ANIM {
+  animation-duration: 0.5s;
+  animation-name: redtoblue;
 }

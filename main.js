@@ -5,6 +5,7 @@ const save = document.getElementById("SAVE");
 let seal = "🦭";
 let sealcount = 1;
 let yea = 1;
+let deconfirm = false
 function SAVE() {
 localStorage.setItem("seal", seal)
 localStorage.setItem("sealcount", sealcount)
@@ -30,7 +31,6 @@ function storageAvailable(type) {
 }
 
 if (storageAvailable("localStorage")) {
-  console.log("stor avialabe")
   // Yippee! We can use localStorage awesomeness
   let test = localStorage.getItem("seal")
   if (localStorage.getItem("seal")) { //save found :]
@@ -65,11 +65,44 @@ button.addEventListener("click", function(){
   console.log(u1.classList);
 });
 u1.addEventListener("click", function(){
-  //localStorage.clear();
   u1.textContent = "POOr."
   setTimeout(() => {
   u1.textContent = "Buy another seal";
 }, 1000);
-save.addEventListener("click", function(){
-SAVE()
+
 });
+save.addEventListener("click", function(){
+ if(save.classList.contains("DELETE")) {
+   if(save.classList.contains("DELCONFIRM")) {
+     localStorage.clear();
+   } else {
+     save.classList.add("DELCONFIRM");
+   }
+ } else {
+   SAVE()
+ };
+});
+document.addEventListener(
+  "keydown",
+  (event) => {
+    const keyName = event.key;
+
+    if (keyName === "Control") {
+
+      save.textContent = "DELETE"
+    save.classList.add("DELETE")  
+    }
+  });
+
+document.addEventListener(
+  "keyup",
+  (event) => {
+    const keyName = event.key;
+
+    if (keyName === "Control") {
+    save.classList.remove("DELCONFIRM")
+    save.textContent = "SAVE"
+    save.classList.remove("DELETE")  
+    }
+  },
+);
